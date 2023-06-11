@@ -1,0 +1,24 @@
+<div class="card">
+    <div class="card-header">
+        <h3>Video Idea</h3>
+    </div>
+    <div class="card-body">
+        <form action="/ideas" method="post">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" name="title" value="{{ title }}">
+                {{#if errors.title}}
+                    <div class="alert alert-danger mt-2" >{{  errors.title }}</div>
+                {{/if}}
+            </div>
+            <div class="mb-3">
+                <label for="details" class="form-label">Deatils</label>
+                <textarea class="form-control" name="details">{{ details }}</textarea>
+                {{#if errors.details}}
+                    <div class="alert alert-danger mt-2" >{{  errors.details }}</div>
+                {{/if}}
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
